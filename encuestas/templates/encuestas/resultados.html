@@ -1,0 +1,31 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ encuesta.texto_encuesta }}</h1>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Respuesta</th>
+            <th>Conteo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for opcion in encuesta.opciones_set.all %}
+        <tr>
+            <td>{{ opcion.texto_opcion }}</td>
+            <td>{{ opcion.los_votos }} voto{{ opcion.los_votos|pluralize }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<div>
+    <a href="{% url 'encuestas:detalle' encuesta.id %}">¿VOTAR OTRA VEZ?</a>
+</div>
+
+{% endblock %}

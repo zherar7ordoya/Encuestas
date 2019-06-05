@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <!--Según VSCode-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block title %}
+    <title>Un sitio de Encuestas</title>
+    {% endblock %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'encuestas/style.css' %}">
+
+</head>
+
+
+<body>
+    <!--Según MDN Web Docs-->
+    <header>
+<!--
+        <h1>Encabezado</h1>
+-->
+        {% block sidebar %}
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'encuestas:index' %}">Home</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+<!--
+                <form>
+                    <input type="search" placeholder="Búsqueda">
+                    <input type="submit" value="Buscar">
+                </form>
+-->
+            </nav>
+        </div>
+        {% endblock %}
+
+    </header>
+
+    <br>
+
+    <main>
+
+        {% block content %} {% endblock %}
+<!--
+        <article>
+            <h2>Artículo</h2>
+
+            <p>Un desarrollador Fullstack es el encargado de manejar cada uno de los aspectos relacionados con la
+                creación y el mantenimiento de una aplicación web. Para ello es fundamental que el desarrollador
+                Fullstack tenga conocimientos en desarrollo Frontend y Backend. Además de manejar diferentes sistemas
+                operativos y lenguajes de programación.</p>
+            <p>Dicho de otra forma: El desarrollador Fullstack es un profesional todoterreno. Una pieza fundamental
+                en los departamentos de desarrollo de cualquier empresa. Conoce cómo se diseña la aplicación web
+                basándose en principios del diseño UX/UI. Y además, sabe programarla.</p>
+            <p>Teniendo en cuenta todos estos aspectos es normal que sea uno de los perfiles más demandados por las
+                empresas. El desarrollador Fullstack es capaz de establecer estrategias para cada parte del proceso de
+                desarrollo web. Esto lo convierte en una figura imprescindible en las empresas con una fuerte base
+                tecnológica.</p>
+
+            <h3>Sección</h3>
+
+            <p>La mejor forma de introducirse en esta profesión es dominando las habilidades y los conocimientos que
+                demandan las empresas. Los nuevos modelos de negocio requieren de profesionales con conocimientos muy
+                actualizados. Por ello, la mejor opción a la hora de formarse como desarrollador Fullstack son los
+                Bootcamps.
+            </p>
+
+            <h3>Sección</h3>
+
+            <form>
+                <fieldset>
+                    <legend>
+                        <strong>Formulario</strong>
+                    </legend>
+                    <small>Descripción orientativa del objetivo de las preguntas.</small>
+                </fieldset>
+
+                <br>
+
+                <label>Nombre:</label>
+                <input type="text" placeholder="Gerardo TORDOYA" required>
+
+                <br>
+
+                <label>Email:</label>
+                <input type="email" placeholder="zherar7ordoya@mail.ru" required>
+
+                <br>
+
+                <label>Celular:</label>
+                <input type="tel" placeholder="+54 9 388 584-3652" required>
+
+                <br>
+
+                <label>Menú de opciones:</label>
+                <select required>
+                    <option value="" selected disabled>Opciones</option>
+                    <option>Sí</option>
+                    <option>No</option>
+                    <option>Prefiero no responder</option>
+                </select>
+
+                <br>
+                <br>
+
+                <label><strong>Una sola opción a elegir:</strong></label>
+                <div>
+                    <input type="radio" name="opcion" required>Sí
+                    <input type="radio" name="opcion" required>No
+                    <input type="radio" name="opcion" required>Prefiero no responder
+                </div>
+
+                <br>
+
+                <label><strong>Cajas de selección:</strong></label>
+                <div>
+                    <input type="checkbox">Sí
+                    <input type="checkbox">No
+                    <input type="checkbox">Prefiero no responder
+                </div>
+
+                <br>
+                <br>
+
+                <label>Comentarios:</label>
+                <textarea placeholder="Su comentario" required></textarea>
+
+                <br>
+                <br>
+
+                <div>
+                    <button type='submit'>Enviar</button>
+                    <button type='reset'>Borrar</button>
+                </div>
+            </form>
+        </article>
+
+        <br>
+
+        <aside>
+            <strong>Páginas relacionadas</strong>
+            <ul>
+                <li><a href="#">Argentina</a></li>
+                <li><a href="#">Internacional</a></li>
+                <li><a href="#">Noticias locales</a></li>
+                <li><a href="#">Negocios</a></li>
+                <li><a href="#">Ciencia y tecnología</a></li>
+                <li><a href="#">Entretenimiento</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Salud</a></li>
+            </ul>
+        </aside>
+-->
+    </main>
+
+    <br>
+
+    {% block footer %}
+    <footer>
+        <p>Desarrollado con ♡ por © Gerardo Tordoya || MADE IN ARGENTINA</p>
+    </footer>
+    {% endblock %}
+
+</body>
+
+
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ encuesta.texto_encuesta }}</h1>
+
+{% if mensaje_error %}
+<p>
+    <strong>{{ mensaje_error }}</strong>
+</p>
+{% endif %}
+
+<form action="{% url 'encuestas:voto' encuesta.id %}" method="post">
+    {% csrf_token %}
+
+    {% for opcion in encuesta.opciones_set.all %}
+    <label for="opcion{{ forloop.counter }}"></label>
+    <input type="radio" name="opcion" id="opcion{{ forloop.counter }}" value="{{ opcion.id }}">{{ opcion.texto_opcion }}
+    {% endfor %}
+
+    <div>
+        <input type="submit" value="Voto">
+    </div>
+</form>
+
+{% endblock %}
