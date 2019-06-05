@@ -1,3 +1,6 @@
+import django_heroku
+
+
 """
 Django settings for root project.
 
@@ -128,5 +131,4 @@ STATICFILES_DIRS = [
 ]
 
 # Configure Django App for Heroku.
-import django_heroku
 django_heroku.settings(locals())
