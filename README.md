@@ -11,14 +11,17 @@ Aplicación (en español) de encuestas de la documentación oficial de Django.
 **Step 1.** Create a Procfile in your project root
 
 > **Procfile**
+
 > `web: gunicorn project_name.wsgi`
 
 
 **Step 2.** Do this in your app/settings.py
 
 > **app/settings.py**
+
 > (arriba de todo):
 > `import django_heroku` 
+
 > (abajo de todo):
 > `django_heroku.settings(locals())`
 
